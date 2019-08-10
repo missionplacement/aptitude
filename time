@@ -1,1 +1,24 @@
 https://www.hackerrank.com/challenges/time-conversion/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+s=list(input().split(':'))
+#print(s)
+s.append(s[2][2:])
+#print(s)
+hr=int(s[0])
+mit=(s[1])
+#print(mit)
+sec=(s[2][:2])
+#print(sec)
+if 'AM' in s:
+  if((hr)==12):
+    hr=0
+  else:
+    pass
+if 'PM' in s:
+  if((hr)!=12):
+    (hr)=(hr)+12
+if(hr<10):
+    hr=['0',str(hr)]
+    hr=(''.join(hr))    
+l=[str(hr),':',str(mit),':',str(sec)]
+print(''.join(l))
+    
