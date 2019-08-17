@@ -1,0 +1,35 @@
+def climbingLeaderboard():
+    n1=int(input())
+    list1=list(map(int,input().split()))
+    n2=int(input())
+    list2=list(map(int,input().split()))
+    b=set()
+    unique=[]
+    for i in list1:
+        if i not in b:
+            unique.append(i)
+            b.add(i)
+    
+    unique.reverse()
+    l4=[]
+    for i in range(n2):
+        first=0
+        last=len(unique)-1
+        z=0
+        mid=0
+        while(last>=first):
+            mid=(first+last)//2
+            if(list2[i]<unique[0]):
+                first=0
+                break
+            elif(list2[i]==unique[mid]):
+                first=mid+1
+                break
+            elif unique[mid]>list2[i]:
+                last=mid-1
+            else:
+                first=mid+1
+        z=len(unique)+1-first
+        l4.append(z)
+    for i in l4:
+        print(i)
